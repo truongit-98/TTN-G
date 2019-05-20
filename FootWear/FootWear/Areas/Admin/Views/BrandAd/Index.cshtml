@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FootWear.Models.Entity.BRAND>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Brand</h2>
+
+<button class="btn bg-light " >
+
+    @Html.ActionLink("Create New", "Create")
+
+</button>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BRAND_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BRAND_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_BRAND }) |
+          
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_BRAND })
+        </td>
+    </tr>
+}
+
+</table>

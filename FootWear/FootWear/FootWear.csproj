@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,6 +134,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ColorAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShoesAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SizeAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TypeAdController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -137,6 +152,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\BRAND.cs" />
+    <Compile Include="Models\Entity\COLOR.cs" />
+    <Compile Include="Models\Entity\CUSTOMER.cs" />
+    <Compile Include="Models\Entity\C_SIZE.cs" />
+    <Compile Include="Models\Entity\MyDB.cs" />
+    <Compile Include="Models\Entity\ORDER.cs" />
+    <Compile Include="Models\Entity\ORDER_DETAIL.cs" />
+    <Compile Include="Models\Entity\SHORE.cs" />
+    <Compile Include="Models\Entity\TYPE.cs" />
+    <Compile Include="Models\Functions\BrandF.cs" />
+    <Compile Include="Models\Functions\ColorF.cs" />
+    <Compile Include="Models\Functions\CustomerF.cs" />
+    <Compile Include="Models\Functions\ShoesF.cs" />
+    <Compile Include="Models\Functions\SizeF.cs" />
+    <Compile Include="Models\Functions\TypeF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1252,6 +1282,31 @@
     <Content Include="Content\sass\bootstrap\_utilities.scss" />
     <Content Include="Content\sass\bootstrap\_variables.scss" />
     <Content Include="Content\sass\style.scss" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\BrandAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandAd\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandAd\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ColorAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ColorAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ColorAd\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ColorAd\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SizeAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SizeAd\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SizeAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SizeAd\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeAd\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeAd\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerAd\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerAd\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ShoesAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ShoesAd\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ShoesAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ShoesAd\Delete.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1280,11 +1335,14 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Brand\Index.cshtml" />
+    <Content Include="Views\Brand\BrandDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Entity\" />
-    <Folder Include="Views\Brand\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Type\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

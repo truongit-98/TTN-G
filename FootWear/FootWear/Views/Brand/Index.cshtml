@@ -1,0 +1,21 @@
+﻿@model IEnumerable<FootWear.Models.Entity.BRAND>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="@Url.Action("BrandDetail","Brand", new { @ID_BRAND = item.ID_BRAND})">@Html.DisplayFor(modelItem => item.BRAND_NAME)</a>
+        </td>
+        
+    </tr>
+}
+
+</table>
