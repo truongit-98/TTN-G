@@ -24,12 +24,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.ID_BRAND)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.BRAND_NAME)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_BRAND }) |
-          
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_BRAND })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_BRAND }) |
+
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_BRAND })
         </td>
     </tr>
 }

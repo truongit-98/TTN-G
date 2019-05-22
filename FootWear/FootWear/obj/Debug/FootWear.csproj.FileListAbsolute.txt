@@ -330,3 +330,7 @@ D:\VI\TTN\Foot\trunk\FootWear\FootWear\obj\Debug\FootWear.csproj.CoreCompileInpu
 D:\VI\TTN\Foot\trunk\FootWear\FootWear\obj\Debug\FootWear.csproj.CopyComplete
 D:\VI\TTN\Foot\trunk\FootWear\FootWear\obj\Debug\FootWear.dll
 D:\VI\TTN\Foot\trunk\FootWear\FootWear\obj\Debug\FootWear.pdb
+D:\VI\TTN\Foot\trunk\FootWear\FootWear\bin\PagedList.dll
+D:\VI\TTN\Foot\trunk\FootWear\FootWear\bin\PagedList.Mvc.dll
+D:\VI\TTN\Foot\trunk\FootWear\FootWear\bin\PagedList.xml
+D:\VI\TTN\Foot\trunk\FootWear\FootWear\bin\PagedList.Mvc.xml

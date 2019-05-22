@@ -6,14 +6,18 @@ using System.Web;
 using System.Web.Mvc;
 using FootWear.Models.Entity;
 using FootWear.Models.Functions;
+using PagedList;
+using PagedList.Mvc;
 namespace FootWear.Areas.Admin.Controllers
 {
     public class ShoesAdController : Controller
     {
         // GET: Admin/Shose
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var lst = new ShoesF().SHORES.ToList();
+            int pageSize = 20;
+            int pageNumber =(page ?? 1);
+            var lst = new ShoesF().SHORES.ToList().OrderBy(n => n.ID).ToPagedList(pageNumber, pageSize);
             return View(lst);
         }
 

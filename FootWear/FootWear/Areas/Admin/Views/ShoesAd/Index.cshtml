@@ -1,11 +1,12 @@
-﻿@model IEnumerable<FootWear.Models.Entity.SHORE>
-
+﻿@model PagedList.PagedList<FootWear.Models.Entity.SHORE>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Products</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,40 +14,52 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.BRAND.BRAND_NAME)
+            @Html.DisplayNameFor(model => model.First().ID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.C_SIZE.SIZE_NAME)
+            @Html.DisplayNameFor(model => model.First().NAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.COLOR.COLOR_NAME)
+            @Html.DisplayNameFor(model => model.First().BRAND.BRAND_NAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TYPE.TYPE_NAME)
+            @Html.DisplayNameFor(model => model.First().C_SIZE.SIZE_NAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NAME)
+            @Html.DisplayNameFor(model => model.First().COLOR.COLOR_NAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IMG)
+            @Html.DisplayNameFor(model => model.First().TYPE.TYPE_NAME)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.First().IMG)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SL)
+            @Html.DisplayNameFor(model => model.First().SL)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTIONS)
+            @Html.DisplayNameFor(model => model.First().DESCRIPTIONS)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PRICE)
+            @Html.DisplayNameFor(model => model.First().PRICE)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.BRAND.BRAND_NAME)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.C_SIZE.SIZE_NAME)
         </td>
@@ -56,11 +69,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.TYPE.TYPE_NAME)
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IMG)
+            <img src="~/Content/images/@item.IMG" alt="" height="auto" width="80px" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SL)
@@ -72,10 +83,21 @@
             @Html.DisplayFor(modelItem => item.PRICE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
-}
+    }
 
 </table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="page">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+<style>
+    .page li {
+        display: inline-table;
+        width: 20px;
+    }
+</style>

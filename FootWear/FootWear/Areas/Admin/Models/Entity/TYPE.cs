@@ -14,10 +14,10 @@ namespace FootWear.Models.Entity
         {
             SHORES = new HashSet<SHORE>();
         }
-
+        [Display(Name = "ID")]
         [Key]
         public int ID_TYPE { get; set; }
-
+        [Display(Name = "Style")]
         [StringLength(10)]
         public string TYPE_NAME { get; set; }
 

@@ -14,30 +14,30 @@ namespace FootWear.Models.Entity
         {
             ORDER_DETAIL = new HashSet<ORDER_DETAIL>();
         }
-
+        [Display(Name ="ID")]
         public int ID { get; set; }
-
+        [Display(Name = "Name")]
         [StringLength(100)]
         public string NAME { get; set; }
-
+        [Display(Name = "Image")]
         [StringLength(50)]
         public string IMG { get; set; }
-
+        [Display(Name = "Quantity")]
         public int? SL { get; set; }
-
+        [Display(Name = "Size")]
         public int? ID_SIZE { get; set; }
-
+        [Display(Name = "Color")]
         public int? ID_COLOR { get; set; }
-
+        [Display(Name = "Brand")]
         public int? ID_BRAND { get; set; }
-
+        [Display(Name = "Style")]
         public int? ID_TYPE { get; set; }
-
+        [Display(Name = "Description")]
         public string DESCRIPTIONS { get; set; }
-
+        [Display(Name = "Price")]
         [Column(TypeName = "money")]
         public decimal? PRICE { get; set; }
-
+       
         public virtual C_SIZE C_SIZE { get; set; }
 
         public virtual BRAND BRAND { get; set; }

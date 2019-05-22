@@ -1,11 +1,15 @@
-﻿@model IEnumerable<FootWear.Models.Entity.CUSTOMER>
+﻿@model PagedList.PagedList<FootWear.Models.Entity.CUSTOMER>
+@using PagedList;
+@using PagedList.Mvc;
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Customers</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,22 +17,29 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CUSTOMER_NAME)
+            @Html.DisplayNameFor(model => model.First().ID_CUSTOMER)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ADDRESS)
+            @Html.DisplayNameFor(model => model.First().CUSTOMER_NAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PHONE)
+            @Html.DisplayNameFor(model => model.First().ADDRESS)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EMAIL)
+            @Html.DisplayNameFor(model => model.First().PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().EMAIL)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_CUSTOMER)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CUSTOMER_NAME)
         </td>
@@ -42,11 +53,22 @@
             @Html.DisplayFor(modelItem => item.EMAIL)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_CUSTOMER }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_CUSTOMER }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_CUSTOMER })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_CUSTOMER }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_CUSTOMER }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_CUSTOMER })
         </td>
     </tr>
-}
+    }
 
 </table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="page">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+<style>
+    .page li {
+        display: inline-table;
+        width: 20px;
+    }
+</style>

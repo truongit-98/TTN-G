@@ -5,14 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 using FootWear.Models.Entity;
 using FootWear.Models.Functions;
+using PagedList;
+using PagedList.Mvc;
 namespace FootWear.Areas.Admin.Controllers
 {
     public class CustomerAdController : Controller
     {
         // GET: Admin/CUSTOMERAd
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            var lst = new CustomerF().CUSTOMERs.ToList();
+            int pageSize = 15;
+            int pageNumber = (page ?? 1);
+            var lst = new CustomerF().CUSTOMERs.ToList().OrderBy(n => n.ID_CUSTOMER).ToPagedList(pageNumber, pageSize);
             return View(lst);
         }
 

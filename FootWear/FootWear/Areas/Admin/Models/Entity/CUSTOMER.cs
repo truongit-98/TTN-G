@@ -14,19 +14,19 @@ namespace FootWear.Models.Entity
         {
             ORDERs = new HashSet<ORDER>();
         }
-
+        [Display(Name ="ID")]
         [Key]
         public int ID_CUSTOMER { get; set; }
-
+        [Display(Name = "Name")]
         [StringLength(50)]
         public string CUSTOMER_NAME { get; set; }
-
+        [Display(Name = "Address")]
         [StringLength(50)]
         public string ADDRESS { get; set; }
-
+        [Display(Name = "Phone")]
         [StringLength(50)]
         public string PHONE { get; set; }
-
+        [Display(Name = "Email")]
         [StringLength(50)]
         public string EMAIL { get; set; }
 
