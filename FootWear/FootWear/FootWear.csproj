@@ -158,21 +158,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Admin\Models\Entity\BRAND.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\COLOR.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\CUSTOMER.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\C_SIZE.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\MyDB.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\ORDER.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\ORDER_DETAIL.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\SHORE.cs" />
-    <Compile Include="Areas\Admin\Models\Entity\TYPE.cs" />
-    <Compile Include="Areas\Admin\Models\Functions\BrandF.cs" />
-    <Compile Include="Areas\Admin\Models\Functions\ColorF.cs" />
-    <Compile Include="Areas\Admin\Models\Functions\CustomerF.cs" />
-    <Compile Include="Areas\Admin\Models\Functions\ShoesF.cs" />
-    <Compile Include="Areas\Admin\Models\Functions\SizeF.cs" />
-    <Compile Include="Areas\Admin\Models\Functions\TypeF.cs" />
+    <Compile Include="Models\Functions\BrandF.cs" />
+    <Compile Include="Models\Functions\ColorF.cs" />
+    <Compile Include="Models\Functions\CustomerF.cs" />
+    <Compile Include="Models\Functions\ShoesF.cs" />
+    <Compile Include="Models\Functions\SizeF.cs" />
+    <Compile Include="Models\Functions\TypeF.cs" />
+    <Compile Include="Models\Entity\ADMIN.cs" />
+    <Compile Include="Models\Entity\BRAND.cs" />
+    <Compile Include="Models\Entity\COLOR.cs" />
+    <Compile Include="Models\Entity\CUSTOMER.cs" />
+    <Compile Include="Models\Entity\C_SIZE.cs" />
+    <Compile Include="Models\Entity\MyDB.cs" />
+    <Compile Include="Models\Entity\ORDER.cs" />
+    <Compile Include="Models\Entity\ORDER_DETAIL.cs" />
+    <Compile Include="Models\Entity\SHORE.cs" />
+    <Compile Include="Models\Entity\sysdiagram.cs" />
+    <Compile Include="Models\Entity\TYPE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1501,7 +1503,7 @@
     <Content Include="Views\Brand\BrandDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
