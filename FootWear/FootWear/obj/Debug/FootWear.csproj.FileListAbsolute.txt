@@ -421,3 +421,4 @@ C:\Users\dell\Desktop\TTN_OK\trunk\FootWear\FootWear\bin\System.Diagnostics.Diag
 C:\Users\dell\Desktop\TTN_OK\trunk\FootWear\FootWear\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\dell\Desktop\TTN_OK\trunk\FootWear\FootWear\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\dell\Desktop\TTN_OK\trunk\FootWear\FootWear\obj\Debug\FootWear.csproj.CopyComplete
+C:\Users\dell\Desktop\TTN_OK\trunk\FootWear\FootWear\obj\Debug\FootWear.csprojAssemblyReference.cache
