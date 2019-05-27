@@ -1,0 +1,28 @@
+﻿@model IEnumerable<FootWear.Models.ViewModel.CustomerOrder>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+<table class="table">
+    <tr>
+        <td>STT</td>
+        <td>Ngày đặt hàng</td>
+        <td>Tên sản phẩm</td>
+        <td>Số lượng sản phẩm</td>
+        <td>Tổng tiền </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ID_ORDER)</td>
+            <td>@Html.DisplayFor(modelItem => item.DATE_OD)</td>
+            <td>@Html.DisplayFor(modelItem => item.NAME)</td>
+            <td>@Html.DisplayFor(modelItem => item.NUMBER)</td>
+            <td>@Html.DisplayFor(modelItem => item.PRICE)</td>
+        </tr>
+
+    }
+</table>

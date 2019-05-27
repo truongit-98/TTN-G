@@ -8,17 +8,15 @@ using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
     //[Authorize(Roles  = "PVT")]
+    [Authorize]
     public class BrandAdController : Controller
     {
-        
         // GET: Admin/BrandAd
         public ActionResult Index()
         {
             var lst = new BrandF().BRANDs.ToList();
             return View(lst);
         }
-
-       
 
         // GET: Admin/BrandAd/Create
         public ActionResult Create()
