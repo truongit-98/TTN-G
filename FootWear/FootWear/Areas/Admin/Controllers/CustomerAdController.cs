@@ -9,6 +9,7 @@ using PagedList;
 using PagedList.Mvc;
 namespace FootWear.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CustomerAdController : Controller
     {
         // GET: Admin/CUSTOMERAd
@@ -26,7 +27,6 @@ namespace FootWear.Areas.Admin.Controllers
         public ActionResult Create()
         {
             
-         
             return View();
         }
 
@@ -70,9 +70,11 @@ namespace FootWear.Areas.Admin.Controllers
         {
             try
             {
-                CustomerF a = new CustomerF();
-                a.EditCUSTOMER(id, br);
-                return RedirectToAction("Index");
+                
+                    CustomerF a = new CustomerF();
+                    a.EditCUSTOMER(id, br);
+                    return RedirectToAction("Index");
+               
             }
             catch
             {
@@ -80,16 +82,22 @@ namespace FootWear.Areas.Admin.Controllers
             }
         }
 
-        //public actionresult details(int id)
-        //{
-        //    return view();
-        //}
+        public ActionResult Details(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                var lst = new CustomerOrderDAO().ListBy(id);
+                return View(lst);
+            }
+            return View("Index");
+            
+        }
 
-        //[httppost]
-        //public actionresult details(int id, order od)
+        //[HttpPost]
+        //public ActionResult Details(int id, ORDER od)
         //{
 
-        //    return view();
+        //    return View();
 
         //}
 

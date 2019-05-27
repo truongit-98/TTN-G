@@ -7,6 +7,7 @@ using FootWear.Models.Entity;
 using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
+    
     public class ColorAdController : Controller
     {
         // GET: Admin/Color
@@ -15,7 +16,7 @@ namespace FootWear.Areas.Admin.Controllers
             var lst = new ColorF().COLORs.ToList();
             return View(lst);
         }
-    
+
         
         // GET: Admin/Color/Create
         public ActionResult Create()

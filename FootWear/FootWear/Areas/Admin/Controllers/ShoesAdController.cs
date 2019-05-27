@@ -10,6 +10,7 @@ using PagedList;
 using PagedList.Mvc;
 namespace FootWear.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ShoesAdController : Controller
     {
         // GET: Admin/Shose

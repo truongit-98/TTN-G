@@ -3,10 +3,10 @@
 @using PagedList.Mvc;
 
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
-                Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Customers</h2>
@@ -36,28 +36,28 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_CUSTOMER)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUSTOMER_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ADDRESS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PHONE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID_CUSTOMER }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID_CUSTOMER }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID_CUSTOMER })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_CUSTOMER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTOMER_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADDRESS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_CUSTOMER }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_CUSTOMER }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_CUSTOMER })
+            </td>
+        </tr>
     }
 
 </table>

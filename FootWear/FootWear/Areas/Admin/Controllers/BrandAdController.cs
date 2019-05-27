@@ -7,8 +7,10 @@ using FootWear.Models.Entity;
 using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
+    //[Authorize(Roles  = "PVT")]
     public class BrandAdController : Controller
     {
+        
         // GET: Admin/BrandAd
         public ActionResult Index()
         {
@@ -52,6 +54,7 @@ namespace FootWear.Areas.Admin.Controllers
         }
 
         // GET: Admin/BrandAd/Edit/5
+        
         public ActionResult Edit(int id)
         {
 

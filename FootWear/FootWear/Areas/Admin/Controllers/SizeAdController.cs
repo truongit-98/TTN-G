@@ -7,6 +7,7 @@ using FootWear.Models.Entity;
 using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
+    [Authorize]
     public class SizeAdController : Controller
     {
         // GET: Admin/BrandAd

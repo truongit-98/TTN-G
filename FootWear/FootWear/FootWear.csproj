@@ -144,6 +144,7 @@
     <Compile Include="Areas\Admin\Controllers\BrandAdController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorAdController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShoesAdController.cs" />
     <Compile Include="Areas\Admin\Controllers\SizeAdController.cs" />
     <Compile Include="Areas\Admin\Controllers\TypeAdController.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Models\Functions\BrandF.cs" />
     <Compile Include="Models\Functions\ColorF.cs" />
     <Compile Include="Models\Functions\CustomerF.cs" />
+    <Compile Include="Models\Functions\CustomerOrderDAO.cs" />
     <Compile Include="Models\Functions\ShoesF.cs" />
     <Compile Include="Models\Functions\SizeF.cs" />
     <Compile Include="Models\Functions\TypeF.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="Models\Entity\SHORE.cs" />
     <Compile Include="Models\Entity\sysdiagram.cs" />
     <Compile Include="Models\Entity\TYPE.cs" />
+    <Compile Include="Models\ViewModel\CustomerOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1433,7 +1436,9 @@
     <Content Include="Content\sass\bootstrap\_utilities.scss" />
     <Content Include="Content\sass\bootstrap\_variables.scss" />
     <Content Include="Content\sass\style.scss" />
-    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Admin\Views\BrandAd\Index.cshtml" />
     <Content Include="Areas\Admin\Views\BrandAd\Create.cshtml" />
     <Content Include="Areas\Admin\Views\BrandAd\Delete.cshtml" />
@@ -1450,7 +1455,6 @@
     <Content Include="Areas\Admin\Views\TypeAd\Create.cshtml" />
     <Content Include="Areas\Admin\Views\TypeAd\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\TypeAd\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\CustomerAd\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CustomerAd\Create.cshtml" />
     <Content Include="Areas\Admin\Views\CustomerAd\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CustomerAd\Delete.cshtml" />
@@ -1471,6 +1475,9 @@
     <Content Include="Areas\Admin\Content\font\glyphiconshalflings-regular.ttf" />
     <Content Include="Areas\Admin\Content\font\glyphiconshalflings-regular.woff" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerAd\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1482,8 +1489,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
-      
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
