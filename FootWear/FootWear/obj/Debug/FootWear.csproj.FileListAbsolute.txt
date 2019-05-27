@@ -510,3 +510,7 @@ C:\Users\dell\Desktop\TTN_TEST\trunk\FootWear\FootWear\obj\Debug\FootWear.csproj
 C:\Users\dell\Desktop\TTN_TEST\trunk\FootWear\FootWear\obj\Debug\FootWear.dll
 C:\Users\dell\Desktop\TTN_TEST\trunk\FootWear\FootWear\obj\Debug\FootWear.pdb
 C:\Users\dell\Desktop\TTN_TEST\trunk\FootWear\FootWear\obj\Debug\FootWear.csprojAssemblyReference.cache
+D:\VI\TTN-123\trunk\FootWear\FootWear\obj\Debug\FootWear.csprojAssemblyReference.cache
+D:\VI\TTN-123\trunk\FootWear\FootWear\obj\Debug\FootWear.csproj.CoreCompileInputs.cache
+D:\VI\TTN-123\trunk\FootWear\FootWear\obj\Debug\FootWear.dll
+D:\VI\TTN-123\trunk\FootWear\FootWear\obj\Debug\FootWear.pdb

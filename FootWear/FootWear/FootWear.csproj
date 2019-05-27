@@ -152,8 +152,10 @@
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenController.cs" />
+    <Compile Include="Controllers\SearchSController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WomenController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1513,6 +1515,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Views\Detail\" />
+    <Folder Include="Views\SearchS\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
