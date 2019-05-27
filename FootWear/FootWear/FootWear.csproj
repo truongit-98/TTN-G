@@ -152,15 +152,16 @@
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenController.cs" />
-    <Compile Include="Controllers\SearchSController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WomenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Functions\BrandF.cs" />
     <Compile Include="Models\Functions\ColorF.cs" />
     <Compile Include="Models\Functions\CustomerF.cs" />
@@ -333,6 +334,7 @@
     <Content Include="Content\css\bootstrap-datepicker.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\css\bootstrap-reboot.css" />
+    <Content Include="Content\css\css\Login.css" />
     <Content Include="Content\css\css\mixins\_text-hide.css" />
     <Content Include="Content\css\flexslider.css" />
     <Content Include="Content\css\icomoon.css" />
@@ -1512,12 +1514,19 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Brand\Index.cshtml" />
     <Content Include="Views\Brand\BrandDetail.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\Search\ViewSearch.cshtml" />
+    <Content Include="Views\ProductDetail\ProductDetail.cshtml" />
+    <Content Include="Views\Home\AllProduct.cshtml" />
+    <Content Include="Views\User\UserPar.cshtml" />
+    <Content Include="Views\User\SignUp.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Cart\CartPar.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Views\Detail\" />
-    <Folder Include="Views\SearchS\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

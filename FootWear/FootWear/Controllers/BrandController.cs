@@ -12,15 +12,16 @@ namespace FootWear.Controllers
 
         MyDB db = new MyDB();
         // GET: Brand
-        public ActionResult Index()
+        public PartialViewResult Index()
         {
             List<BRAND> lstbrand = db.BRANDs.ToList();
-            return View(lstbrand);
+            return PartialView(lstbrand);
         }
 
         public ActionResult BrandDetail(int ID_BRAND)
         {
             BRAND br = db.BRANDs.SingleOrDefault(n => n.ID_BRAND == ID_BRAND);
+            ViewBag.name = db.BRANDs.SingleOrDefault(n => n.ID_BRAND == br.ID_BRAND).BRAND_NAME;
             List<SHORE> lstShoes = db.SHORES.Where(n => n.ID_BRAND == ID_BRAND).ToList();
             return View(lstShoes);
         }

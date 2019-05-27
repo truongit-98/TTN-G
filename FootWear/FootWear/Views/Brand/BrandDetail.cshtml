@@ -1,8 +1,42 @@
 ﻿@model IEnumerable<FootWear.Models.Entity.SHORE>
+
 @{
     ViewBag.Title = "BrandDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>BrandDtail</h2>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="@Url.Action("Index","Home")">Home</a></span> / <span>@ViewBag.name</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="colorlib-product">
+    <div class="container">
+
+        <div class="row row-pb-md">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 mb-4 text-center">
+                    <div class="product-entry border">
+                        <a href="@Url.Action("ProductDetail","ProductDetail",new {@ID= item.ID })" class="prod-img">
+                            <img src="~/Content/images/@item.IMG" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                        </a>
+                        <div class="desc">
+                            <h2><a href="@Url.Action("ProductDetail","ProductDetail",new {@ID= item.ID })">@item.NAME / @item.COLOR.COLOR_NAME / @item.C_SIZE.SIZE_NAME</a></h2>
+                            <span class="price">$ @item.PRICE</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+
 

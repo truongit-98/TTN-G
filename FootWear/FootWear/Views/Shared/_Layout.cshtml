@@ -51,12 +51,7 @@
                             <div id="colorlib-logo"><a href="@Url.Action("Index","Home")">Footwear</a></div>
                         </div>
                         <div class="col-sm-5 col-md-3">
-                            <form action="#" class="search-wrap">
-                                <div class="form-group">
-                                    <input type="search" class="form-control search" placeholder="Search">
-                                    <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
-                                </div>
-                            </form>
+                            @Html.Partial("~/Views/Search/Search.cshtml")
                         </div>
                     </div>
                     <div class="row">
@@ -66,19 +61,15 @@
                                 <li class="has-dropdown">
                                     <a href="#">Brand</a>
                                     <ul class="dropdown">
-                                        <li><a href="product-detail.html">Adidas</a></li>
-                                        <li><a href="cart.html">Nike</a></li>
-                                        <li><a href="checkout.html">Gucci</a></li>
-                                        <li><a href="order-complete.html">Converse</a></li>
-                                        <li><a href="add-to-wishlist.html">Puma</a></li>
+                                        @Html.Action("Index", "Brand")
                                     </ul>
                                 </li>
                                 <li><a href="@Url.Action("Index","Men")">Men</a></li>
                                 <li><a href="@Url.Action("Index","Women")">Women</a></li>
                                 <li><a href="@Url.Action("Index","About")">About</a></li>
                                 <li><a href="@Url.Action("Index","Contact")">Contact</a></li>
-                                <li class="user"><a href="@Url.Action("Index","Cart")"><i class="far fa-user"></i></a></li>
-                                <li class="cart"><a href="@Url.Action("Index","Cart")"><i class="icon-shopping-cart"></i> [0]</a></li>
+                                @Html.Action("UserPar", "User")
+                                @Html.Action("CartPar", "Cart")
                             </ul>
                         </div>
                     </div>
