@@ -1,0 +1,15 @@
+﻿
+<div class="search-wrap">
+    @using (Html.BeginForm("ViewSearch", "Search", FormMethod.Post))
+    {
+        <div class="form-group">
+
+            <input type="text" name="txtSearch" class="form-control search" placeholder="Search">
+            <button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i></button>
+
+        </div>
+    }
+</div>
+
+
+

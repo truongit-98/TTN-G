@@ -1,0 +1,47 @@
+﻿
+@model PagedList.PagedList<FootWear.Models.Entity.SHORE>
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "ViewSearch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 style="margin-left:176px;">@ViewBag.TB</h4>
+
+<div class="colorlib-product">
+    <div class="container">
+
+        <div class="row row-pb-md">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 mb-4 text-center">
+                    <div class="product-entry border">
+                        <a href="@Url.Action("ProductDetail","ProductDetail",new {@ID= item.ID })" class="prod-img">
+                            <img src="~/Content/images/@item.IMG" class="img-fluid" alt="Free html5 bootstrap 4 template" style="height:255px;">
+                        </a>
+                        <div class="desc">
+                            <h2><a href="@Url.Action("ProductDetail","ProductDetail",new {@ID= item.ID })">@item.NAME @item.COLOR.COLOR_NAME</a></h2>
+                            <span class="price">$ @item.PRICE</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="block-27">
+            <ul>
+                @Html.PagedListPager(Model, page => Url.Action("ViewSearch", new { page = page, @sKey = ViewBag.Key }))
+            </ul>
+        </div>
+    </div>
+</div>
+
+
