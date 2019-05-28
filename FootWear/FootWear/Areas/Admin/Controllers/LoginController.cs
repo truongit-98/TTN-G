@@ -16,7 +16,6 @@ namespace FootWear.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Index(ADMIN ad)
         {
             MyDB db = new MyDB();

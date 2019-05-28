@@ -7,7 +7,7 @@ using FootWear.Models.Entity;
 using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class TypeAdController : Controller
     {
         // GET: Admin/TYPEAd

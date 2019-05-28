@@ -1,22 +1,89 @@
 ﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+
 @model FootWear.Models.Entity.ADMIN
 
-@using (Html.BeginForm())
-{
-<div class="form-group">
-    <p class="text text-danger">@ViewBag.Error</p>
-    <label>User name : </label>
-    <div class="form-control">
-        @Html.TextBoxFor(n => n.AD_NAME)
-    </div>
-    <label>Password : </label>
-    <div class="form-control">
-        @Html.PasswordFor(n => n.AD_PASS)
-    </div>
-    <button type="submit" class="btn btn-default">Login</button>
-</div>
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLogin.cshtml";
 }
+
+<link href="~/Content/css/css/Login.css" rel="stylesheet" />
+<style>
+    .header-log {
+        background: #FFF;
+    }
+
+    .menu2 ul {
+        width: 30%;
+        margin: auto;
+        border-bottom: 2px solid grey;
+    }
+
+    .header-left-bottom input[type="submit"] {
+        background: #70389C;
+        color: #FFF;
+        margin-left: 140px;
+        font-size: 20px;
+        padding: 5px;
+        width: 38%;
+        font-weight: 500;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    h4 {
+        text-align: center;
+    }
+</style>
+<h4>@ViewBag.ThongBao</h4>
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    <div class="menu2">
+        <ul>
+            <li class="dn"><a href="@Url.Action("Login","User")">Login</a></li>
+            
+        </ul>
+    </div>
+    <div class="header-log">
+        <div class="header-main">
+
+            <div class="header-bottom">
+                <div class="header-right w3agile">
+
+                    <div class="header-left-bottom agileinfo">
+
+                        @using (Html.BeginForm())
+                        {
+                            <div class="form-group">
+                                <p class="text text-danger">@ViewBag.Error</p>
+                                <label>User name : </label>
+                                <div class="form-control">
+                                    @Html.TextBoxFor(n => n.AD_NAME)
+                                </div>
+                                <label>Password : </label>
+                                <div class="form-control">
+                                    @Html.PasswordFor(n => n.AD_PASS)
+                                </div>
+                                <button type="submit" class="btn btn-default">Login</button>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
