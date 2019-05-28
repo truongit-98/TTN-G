@@ -1,0 +1,7 @@
+﻿@using FootWear.Models.Entity;
+@model List<BRAND>
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("viewBrand","Men",new {@ID_BRAND=item.ID_BRAND })">@item.BRAND_NAME</a></li>
+}
+

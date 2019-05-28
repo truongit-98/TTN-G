@@ -1,0 +1,6 @@
+﻿@using FootWear.Models.Entity
+@model List<C_SIZE>
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("ViewSize","Men",new { @ID_SIZE=item.ID_SIZE})">@item.SIZE_NAME</a></li>
+}

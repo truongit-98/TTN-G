@@ -1,0 +1,7 @@
+﻿@using FootWear.Models.Entity
+@model List<COLOR>
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("ViewColor","Men",new { @ID_COLOR=item.ID_COLOR})">@item.COLOR_NAME</a></li>
+}
+
