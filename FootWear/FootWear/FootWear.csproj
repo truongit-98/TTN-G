@@ -156,6 +156,7 @@
     <Compile Include="Controllers\MenController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\sortMenController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WomenController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1524,6 +1525,14 @@
     <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Cart\CartPar.cshtml" />
     <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\sortMen\Size.cshtml" />
+    <Content Include="Views\Men\viewSize.cshtml" />
+    <Content Include="Views\sortMen\brand.cshtml" />
+    <Content Include="Views\sortMen\Style.cshtml" />
+    <Content Include="Views\sortMen\Color.cshtml" />
+    <Content Include="Views\Men\viewBrand.cshtml" />
+    <Content Include="Views\Men\viewStyle.cshtml" />
+    <Content Include="Views\Men\viewColor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
