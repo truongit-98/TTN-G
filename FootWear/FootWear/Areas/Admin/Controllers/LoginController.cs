@@ -15,24 +15,36 @@ namespace FootWear.Areas.Admin.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(ADMIN ad)
+        [HttpGet]
+        public ActionResult Login()
         {
-            MyDB db = new MyDB();
-            if (ModelState.IsValid)
-            {
-                var model = db.ADMINs.Where(n => n.AD_NAME.Contains(ad.AD_NAME) && n.AD_PASS.Contains(ad.AD_PASS) ).ToList();
-                if (model.Count == 0)
-                {
-                    ViewBag.Error = "use or password fail !!";
-                    return View();
-                }
-                else
-                {
-                    return RedirectToAction("Index","BrandAd");
-                }
-            }
             return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection f)
+        {
+            MyDB dB = new MyDB();
+            string sUser = f["txtUser"].ToString();
+            string sPass = f.Get("txtPass").ToString();
+            ViewBag.name = sUser;
+            ADMIN cust = dB.ADMINs.SingleOrDefault(n => n.AD_NAME == sUser && n.AD_PASS == sPass);
+            if (cust != null)
+            {
+                ViewBag.ThongBao = "Logged in successfully!";
+                Session["User"] = cust;
+                return RedirectToAction("Index", "ShoesAd");
+            }
+            ViewBag.ThongBao = "Login failed!";
+
+            return RedirectToAction("Login", "Login");
+
+        }
+
+        public ActionResult LogOut()
+        {
+            Session["User"] = null;
+            return RedirectToAction("Login", "Login");
+
         }
     }
 }

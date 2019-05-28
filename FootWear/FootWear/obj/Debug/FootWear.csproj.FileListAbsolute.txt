@@ -772,3 +772,4 @@ C:\Users\dell\Desktop\TTN_Origin\trunk\FootWear\FootWear\obj\Debug\FootWear.cspr
 C:\Users\dell\Desktop\TTN_Origin\trunk\FootWear\FootWear\obj\Debug\FootWear.csproj.CopyComplete
 C:\Users\dell\Desktop\TTN_Origin\trunk\FootWear\FootWear\obj\Debug\FootWear.dll
 C:\Users\dell\Desktop\TTN_Origin\trunk\FootWear\FootWear\obj\Debug\FootWear.pdb
+C:\Users\dell\Desktop\TTN_Origin\trunk\FootWear\FootWear\obj\Debug\FootWear.csprojAssemblyReference.cache
