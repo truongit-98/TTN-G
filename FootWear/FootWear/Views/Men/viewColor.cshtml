@@ -1,0 +1,89 @@
+﻿@using FootWear.Models.Entity;
+@model List<SHORE>
+@{
+    ViewBag.Title = "Color";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="@Url.Action("Index","Home")">Home</a></span> / <span><a href="@Url.Action("Index","Men")">Men</a></span> / <span>@ViewBag.col</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<p>@ViewBag.Notify</p>
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-xl-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="side border mb-1">
+                            <h3>Brand</h3>
+                            <ul>
+                                @Html.Action("brand", "sortMen")
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="side border mb-1">
+                            <h3>Size</h3>
+                            <div class="block-26 mb-2">
+                                <ul>
+                                    @Html.Action("Size", "sortMen")
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="side border mb-1">
+                            <h3>Style</h3>
+                            <ul>
+                                @Html.Action("Style", "sortMen")
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="side border mb-1">
+                            <h3>Colors</h3>
+                            <ul>
+                                @Html.Action("Color", "sortMen")
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-9 col-xl-9">
+                <div class="row row-pb-md">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 mb-4 text-center">
+                            <div class="product-entry border">
+                                <a href="#" class="prod-img">
+                                    <img src="~/Content/images/@item.IMG" class="img-fluid" alt="Free html5 bootstrap 4 template" style="height:255px;">
+                                </a>
+                                <div class="desc">
+                                    <h2><a href="#">@item.NAME / @item.COLOR.COLOR_NAME / @item.C_SIZE.SIZE_NAME</a></h2>
+                                    <span class="price">$ @item.PRICE</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
