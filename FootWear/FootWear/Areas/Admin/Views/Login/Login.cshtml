@@ -1,0 +1,82 @@
+﻿
+
+<link href="~/Content/css/css/Login.css" rel="stylesheet" />
+<style>
+    .header-log {
+        background: #FFF;
+    }
+
+    .menu2 ul {
+        width: 30%;
+        margin: auto;
+        border-bottom: 2px solid grey;
+    }
+
+    .header-left-bottom input[type="submit"] {
+        background: #70389C;
+        color: #FFF;
+        margin-left: 140px;
+        font-size: 20px;
+        padding: 5px;
+        width: 38%;
+        font-weight: 500;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    h4 {
+        text-align: center;
+    }
+</style>
+<h4>@ViewBag.ThongBao</h4>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="menu2">
+        <ul>
+            <li class="dn"><a href="@Url.Action("Login","User")">Login</a></li>
+            <li><a href="@Url.Action("SignUp","User")">Sign Up</a></li>
+        </ul>
+    </div>
+    <div class="header-log">
+        <div class="header-main">
+
+            <div class="header-bottom">
+                <div class="header-right w3agile">
+
+                    <div class="header-left-bottom agileinfo">
+
+                        <form action="#" method="post">
+                            <input type="text" value="Username" name="txtUser" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" />
+                            <input type="password" value="Password" name="txtPass" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" />
+                            <div class="remember">
+                                <span class="checkbox1">
+                                    <label class="checkbox"><input type="checkbox" name="" checked="" /><i> </i>Remember Password</label>
+                                </span>
+                                <div class="forgot">
+                                    <h6><a href="#">Forgot Password?</a></h6>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+
+                            <input type="submit" value="Login">
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
