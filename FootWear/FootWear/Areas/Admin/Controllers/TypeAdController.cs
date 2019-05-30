@@ -8,8 +8,9 @@ using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
     //[Authorize]
-    public class TypeAdController : Controller
+    public class TypeAdController : BaseController
     {
+        MyDB db = new MyDB();
         // GET: Admin/TYPEAd
         public ActionResult Index()
         {
@@ -55,8 +56,8 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/TYPEAd/Edit/5
         public ActionResult Edit(int id)
         {
-
-            return View();
+            TYPE br = db.TYPEs.SingleOrDefault(n => n.ID_TYPE == id);
+            return View(br);
         }
 
         // POST: Admin/TYPEAd/Edit/5
@@ -88,7 +89,7 @@ namespace FootWear.Areas.Admin.Controllers
             try
             {
                 int i = 0;
-                MyDB db = new MyDB();
+                
                 var query = db.TYPEs.Where(n => n.ID_TYPE == id).ToList();
                 foreach (var item in query)
                 {
@@ -106,6 +107,13 @@ namespace FootWear.Areas.Admin.Controllers
             {
                 return View("Index");
             }
+        }
+
+        public ActionResult Details(int id)
+        {
+            //var lst = db.SHORES.SqlQuery(" SELECT * FROM dbo.SHORES WHERE ID_BRAND = @ma", new SqlParameter("ma", id)).ToList();
+            var lst = new ShoesF().SHORES.Where(n => n.ID_TYPE == id).ToList();
+            return View(lst);
         }
     }
 }

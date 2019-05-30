@@ -18,6 +18,7 @@ namespace FootWear.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SignUp(CUSTOMER cust)
@@ -31,6 +32,7 @@ namespace FootWear.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+
         [HttpGet]
         public ActionResult Login()
         {

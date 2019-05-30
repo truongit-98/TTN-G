@@ -11,8 +11,10 @@ using PagedList.Mvc;
 namespace FootWear.Areas.Admin.Controllers
 {
     //[Authorize]
-    public class ShoesAdController : Controller
+    public class ShoesAdController : BaseController
     {
+        MyDB db = new MyDB();
+
         // GET: Admin/Shose
         public ActionResult Index(int? page)
         {
@@ -22,13 +24,21 @@ namespace FootWear.Areas.Admin.Controllers
             return View(lst);
         }
 
+        public ActionResult Index1(int? page)
+        {
+            ViewBag.ID_BRAND = db.BRANDs.ToList();
+            int pageSize = 20;
+            int pageNumber = (page ?? 1);
+            var lst = new ShoesF().SHORES.ToList().OrderBy(n => n.ID).ToPagedList(pageNumber, pageSize);
+            return View(lst);
+        }
+
 
 
         // GET: Admin/Shose/Create
         public ActionResult Create()
         {
-            MyDB db = new MyDB();
-
+            
             ViewBag.ID_BRAND = new SelectList(db.BRANDs.OrderBy(n => n.BRAND_NAME).ToList(), "ID_BRAND", "BRAND_NAME");
             ViewBag.ID_COLOR = new SelectList(db.COLORs.OrderBy(n => n.COLOR_NAME).ToList(), "ID_COLOR", "COLOR_NAME");
             ViewBag.ID_TYPE = new SelectList(db.TYPEs.OrderBy(n => n.TYPE_NAME).ToList(), "ID_TYPE", "TYPE_NAME");
@@ -96,12 +106,14 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/Shose/Edit/5
         public ActionResult Edit(int id)
         {
-            MyDB db = new MyDB();
+            SHORE br = db.SHORES.SingleOrDefault(n => n.ID == id);
+            
+
             ViewBag.ID_BRAND = new SelectList(db.BRANDs.OrderBy(n => n.BRAND_NAME).ToList(), "ID_BRAND", "BRAND_NAME");
             ViewBag.ID_COLOR = new SelectList(db.COLORs.OrderBy(n => n.COLOR_NAME).ToList(), "ID_COLOR", "COLOR_NAME");
             ViewBag.ID_TYPE = new SelectList(db.TYPEs.OrderBy(n => n.TYPE_NAME).ToList(), "ID_TYPE", "TYPE_NAME");
             ViewBag.ID_SIZE = new SelectList(db.C_SIZE.OrderBy(n => n.SIZE_NAME).ToList(), "ID_SIZE", "SIZE_NAME");
-            return View();
+            return View(br);
         }
 
         // POST: Admin/Shose/Edit/5
@@ -160,7 +172,9 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/Shose/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            SHORE br = db.SHORES.SingleOrDefault(n => n.ID == id);
+
+            return View(br);
         }
 
         // POST: Admin/Shose/Delete/5

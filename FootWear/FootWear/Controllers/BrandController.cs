@@ -25,7 +25,5 @@ namespace FootWear.Controllers
             List<SHORE> lstShoes = db.SHORES.Where(n => n.ID_BRAND == ID_BRAND).ToList();
             return View(lstShoes);
         }
-
-
     }
 }

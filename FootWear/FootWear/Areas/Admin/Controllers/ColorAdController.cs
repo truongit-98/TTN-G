@@ -8,8 +8,9 @@ using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
     
-    public class ColorAdController : Controller
+    public class ColorAdController : BaseController
     {
+        MyDB db = new MyDB();
         // GET: Admin/Color
         public ActionResult Index()
         {
@@ -54,7 +55,8 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/Color/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            COLOR br = db.COLORs.SingleOrDefault(n => n.ID_COLOR == id);
+            return View(br);
         }
 
         // POST: Admin/Color/Edit/5
@@ -76,7 +78,8 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/Color/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            COLOR br = db.COLORs.SingleOrDefault(n => n.ID_COLOR == id);
+            return View(br);
         }
 
         // POST: Admin/Color/Delete/5
@@ -104,6 +107,13 @@ namespace FootWear.Areas.Admin.Controllers
             {
                 return View("Index");
             }
+        }
+
+        public ActionResult Detail(int id)
+        {
+            //var lst = db.SHORES.SqlQuery(" SELECT * FROM dbo.SHORES WHERE ID_BRAND = @ma", new SqlParameter("ma", id)).ToList();
+            var lst = new ShoesF().SHORES.Where(n => n.ID_TYPE == id).ToList();
+            return View(lst);
         }
     }
 }

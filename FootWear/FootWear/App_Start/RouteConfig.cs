@@ -13,6 +13,19 @@ namespace FootWear
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+              name: "index",
+              url: "sanpham",
+              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
+              name: "Brand",
+              url: "hang/{ID_BRAND}",
+              defaults: new { controller = "Brand", action = "BrandDetail", id = UrlParameter.Optional }
+          );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

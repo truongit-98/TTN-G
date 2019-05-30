@@ -8,8 +8,10 @@ using FootWear.Models.Functions;
 namespace FootWear.Areas.Admin.Controllers
 {
     //[Authorize]
-    public class SizeAdController : Controller
+    public class SizeAdController : BaseController 
     {
+
+        MyDB db = new MyDB();
         // GET: Admin/BrandAd
         public ActionResult Index()
         {
@@ -32,7 +34,7 @@ namespace FootWear.Areas.Admin.Controllers
             try
             {
                 int i = 0;
-                MyDB db = new MyDB();
+                
                 var query = db.C_SIZE.Where(n => n.SIZE_NAME == SIZE_NAME).ToList();
                 foreach (var item in query)
                 {
@@ -44,6 +46,7 @@ namespace FootWear.Areas.Admin.Controllers
                     a.AddC_SIZE(sz);
                     return RedirectToAction("Index");
                 }
+                ViewBag.ThongBao = " size already exists !! ";
                 return View();
             }
             catch
@@ -55,8 +58,8 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/BrandAd/Edit/5
         public ActionResult Edit(int id)
         {
-
-            return View();
+            C_SIZE br = db.C_SIZE.SingleOrDefault(n => n.ID_SIZE == id);
+            return View(br);
         }
 
         // POST: Admin/BrandAd/Edit/5
@@ -78,7 +81,9 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/BrandAd/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            C_SIZE br = db.C_SIZE.SingleOrDefault(n => n.ID_SIZE == id);
+            return View(br);
+            
         }
 
         // POST: Admin/BrandAd/Delete/5
@@ -106,6 +111,12 @@ namespace FootWear.Areas.Admin.Controllers
             {
                 return View("Index");
             }
+        }
+        public ActionResult Details(int id)
+        {
+            //var lst = db.SHORES.SqlQuery(" SELECT * FROM dbo.SHORES WHERE ID_BRAND = @ma", new SqlParameter("ma", id)).ToList();
+            var lst = new ShoesF().SHORES.Where(n => n.ID_SIZE == id).ToList();
+            return View(lst);
         }
     }
 }

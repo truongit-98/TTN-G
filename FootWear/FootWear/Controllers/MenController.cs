@@ -22,13 +22,14 @@ namespace FootWear.Controllers
         public ActionResult viewSize(int ID_SIZE)
         {
             C_SIZE siz = db.C_SIZE.SingleOrDefault(n => n.ID_SIZE == ID_SIZE);
-            ViewBag.siz = db.C_SIZE.SingleOrDefault(n => n.ID_SIZE == siz.ID_SIZE).SIZE_NAME;
+          
             if (siz == null)
             {
                 Response.StatusCode = 404;
                 ViewBag.Notify = "Size not found!";
                 return null;
             }
+            ViewBag.siz = db.C_SIZE.SingleOrDefault(n => n.ID_SIZE == siz.ID_SIZE).SIZE_NAME;
             //truy xuất danh sách sp theo hãng
             List<SHORE> lstSanPham = db.SHORES.Where(n => n.ID_SIZE == ID_SIZE && n.C_SIZE.ID_SIZE > 6).OrderBy(n => n.NAME).ToList();           
             return View(lstSanPham);

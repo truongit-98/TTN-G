@@ -10,9 +10,11 @@ using PagedList.Mvc;
 namespace FootWear.Areas.Admin.Controllers
 {
     //[Authorize]
-    public class CustomerAdController : Controller
+    public class CustomerAdController : BaseController
     {
         // GET: Admin/CUSTOMERAd
+
+        MyDB db = new MyDB();
         public ActionResult Index(int ? page)
         {
             int pageSize = 15;
@@ -60,8 +62,9 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/CUSTOMERAd/Edit/5
         public ActionResult Edit(int id)
         {
-
-            return View();
+            CUSTOMER br = db.CUSTOMERs.SingleOrDefault(n => n.ID_CUSTOMER == id);
+            return View(br);
+            
         }
 
         // POST: Admin/CUSTOMERAd/Edit/5
@@ -105,7 +108,9 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/CUSTOMERAd/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            CUSTOMER br = db.CUSTOMERs.SingleOrDefault(n => n.ID_CUSTOMER == id);
+            return View(br);
+           
         }
 
         // POST: Admin/CUSTOMERAd/Delete/5

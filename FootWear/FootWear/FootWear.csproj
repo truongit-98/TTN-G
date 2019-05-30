@@ -163,7 +163,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\ViewModel\Cart.cs" />
     <Compile Include="Models\Functions\BrandF.cs" />
     <Compile Include="Models\Functions\ColorF.cs" />
     <Compile Include="Models\Functions\CustomerF.cs" />
@@ -183,6 +183,7 @@
     <Compile Include="Models\Entity\sysdiagram.cs" />
     <Compile Include="Models\Entity\TYPE.cs" />
     <Compile Include="Models\ViewModel\CustomerOrder.cs" />
+    <Compile Include="Models\ViewModel\SessionNamePassAd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1448,7 +1449,6 @@
     <Content Include="Areas\Admin\Views\BrandAd\Index.cshtml" />
     <Content Include="Areas\Admin\Views\BrandAd\Create.cshtml" />
     <Content Include="Areas\Admin\Views\BrandAd\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\BrandAd\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ColorAd\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ColorAd\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ColorAd\Create.cshtml" />
@@ -1484,7 +1484,12 @@
     <Content Include="Areas\Admin\Views\CustomerAd\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CustomerAd\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\AdminLogin.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandAd\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\ShoesAd\Index1.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandAd\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SizeAd\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ColorAd\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeAd\Details.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1520,7 +1525,6 @@
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\Search\ViewSearch.cshtml" />
     <Content Include="Views\ProductDetail\ProductDetail.cshtml" />
-    <Content Include="Views\Home\AllProduct.cshtml" />
     <Content Include="Views\User\UserPar.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
@@ -1535,11 +1539,9 @@
     <Content Include="Views\Men\viewBrand.cshtml" />
     <Content Include="Views\Men\viewStyle.cshtml" />
     <Content Include="Views\Men\viewColor.cshtml" />
+    <Content Include="Views\Home\AllProduct.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Base\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

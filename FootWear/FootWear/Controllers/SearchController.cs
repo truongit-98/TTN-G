@@ -39,21 +39,21 @@ namespace FootWear.Controllers
             ViewBag.TB = "Find " + lstsp.Count + " products for keywords : " + sKey;
             return View(lstsp.OrderBy(n => n.NAME).ToPagedList(pageNumber, pageSize));
         }
-        [HttpGet]
-        public ActionResult ViewSearch(int? page, string sKey)
-        {
-            List<SHORE> lstsp = db.SHORES.Where(n => n.NAME.Contains(sKey)).ToList();
-            //phân trang
-            int pageNumber = page ?? 1;
-            int pageSize = 12;
-            if (lstsp.Count == 0||sKey=="")
-            {
-                ViewBag.TB = "Product not found!";
-                return View(db.SHORES.OrderBy(n => n.NAME).ToPagedList(pageNumber, pageSize));
-            }
-            ViewBag.TB = "Find " + lstsp.Count + " products for keywords : " + sKey;
-            return View(lstsp.OrderBy(n => n.NAME).ToPagedList(pageNumber, pageSize));
-        }
+        //[HttpGet]
+        //public ActionResult ViewSearch(int? page, string sKey)
+        //{
+        //    List<SHORE> lstsp = db.SHORES.Where(n => n.NAME.Contains(sKey)).ToList();
+        //    //phân trang
+        //    int pageNumber = page ?? 1;
+        //    int pageSize = 12;
+        //    if (lstsp.Count == 0||sKey=="")
+        //    {
+        //        ViewBag.TB = "Product not found!";
+        //        return View(db.SHORES.OrderBy(n => n.NAME).ToPagedList(pageNumber, pageSize));
+        //    }
+        //    ViewBag.TB = "Find " + lstsp.Count + " products for keywords : " + sKey;
+        //    return View(lstsp.OrderBy(n => n.NAME).ToPagedList(pageNumber, pageSize));
+        //}
 
     }
 }

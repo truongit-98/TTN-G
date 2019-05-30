@@ -26,8 +26,7 @@ namespace FootWear.Models.Functions
                           NAME = b.NAME,
                           NUMBER = a.NUMBER,
                           PRICE = a.PRICE
-                      };
-            
+                      }; 
               return lst.ToList();  
         }
     }

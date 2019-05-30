@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,12 +10,13 @@ namespace FootWear.Areas.Admin.Controllers
 {
     //[Authorize(Roles  = "PVT")]
     //[Authorize]
-    public class BrandAdController : Controller
+    public class BrandAdController : BaseController
     {
+        MyDB db = new MyDB();
         // GET: Admin/BrandAd
         public ActionResult Index()
         {
-            var lst = new BrandF().BRANDs.ToList();
+            var lst = new BrandF().BRANDs.OrderBy(n=>n.BRAND_NAME).ToList();
             return View(lst);
         }
 
@@ -31,7 +33,7 @@ namespace FootWear.Areas.Admin.Controllers
             try
             {
                 int i = 0;
-                MyDB db = new MyDB();
+                
                 var query = db.BRANDs.Where(n => n.BRAND_NAME == BRAND_NAME).ToList();
                 foreach (var item in query)
                 {
@@ -55,8 +57,8 @@ namespace FootWear.Areas.Admin.Controllers
         
         public ActionResult Edit(int id)
         {
-
-            return View();
+            BRAND br = db.BRANDs.SingleOrDefault(n => n.ID_BRAND == id);
+            return View(br);
         }
 
         // POST: Admin/BrandAd/Edit/5
@@ -78,7 +80,8 @@ namespace FootWear.Areas.Admin.Controllers
         // GET: Admin/BrandAd/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            BRAND br = db.BRANDs.SingleOrDefault(n => n.ID_BRAND == id);
+            return View(br);
         }
 
         // POST: Admin/BrandAd/Delete/5
@@ -106,6 +109,17 @@ namespace FootWear.Areas.Admin.Controllers
             {
                 return View("Index");
             }
+
         }
+
+        public ActionResult Detail(int id)
+        {
+            var lst = new ShoesF().SHORES.Where(n => n.ID_BRAND == id).ToList();
+            return View(lst);
+        }
+
     }
+
+   
+    
 }

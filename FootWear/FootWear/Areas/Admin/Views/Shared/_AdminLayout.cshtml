@@ -1,4 +1,6 @@
-﻿
+﻿@using FootWear.Models.ViewModel;
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -312,8 +314,8 @@
                                 <li class="dropdown-menu-title">
                                     <span>Account Settings</span>
                                 </li>
-                                <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-                                <li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+                                <li><a href="#"><i class="halflings-icon user"></i>@SessionNamePassAd.name</a></li>
+                                <li><a href="@Url.Action("Logout","Login")"><i class="halflings-icon off"></i> Logout</a></li>
                             </ul>
                         </li>
                         <!-- end: User Dropdown -->
