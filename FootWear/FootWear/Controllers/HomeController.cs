@@ -13,7 +13,7 @@ namespace FootWear.Controllers
         MyDB db = new MyDB();
         public ActionResult Index()
         {
-            var lst = db.SHORES.Take(20).ToList().OrderByDescending(n => n.UPDATE_DAY);
+            var lst = db.SHORES.Take(20).ToList().OrderByDescending(n => n.PRICE);
             return View(lst);
         }
         public ActionResult AllProduct(int? page)

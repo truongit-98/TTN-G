@@ -107,7 +107,7 @@ namespace FootWear.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             SHORE br = db.SHORES.SingleOrDefault(n => n.ID == id);
-            
+
 
             ViewBag.ID_BRAND = new SelectList(db.BRANDs.OrderBy(n => n.BRAND_NAME).ToList(), "ID_BRAND", "BRAND_NAME");
             ViewBag.ID_COLOR = new SelectList(db.COLORs.OrderBy(n => n.COLOR_NAME).ToList(), "ID_COLOR", "COLOR_NAME");

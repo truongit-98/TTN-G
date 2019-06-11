@@ -24,7 +24,7 @@ namespace FootWear
               name: "Brand",
               url: "hang/{ID_BRAND}",
               defaults: new { controller = "Brand", action = "BrandDetail", id = UrlParameter.Optional }
-          );
+          ); // đánh địa chỉ là locohost/hang
 
             routes.MapRoute(
                 name: "Default",
